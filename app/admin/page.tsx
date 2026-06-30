@@ -88,12 +88,13 @@ export default function AdminPage() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">⚾ Woodlands Teeball — Registrations</h1>
+            <h1 className="text-2xl font-bold" style={{ color: '#013c28' }}>⚾ Woodlands Teeball — Registrations</h1>
             <p className="text-gray-500 text-sm mt-1">{registrations.length} registered</p>
           </div>
           <button
             onClick={exportCSV}
-            className="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+            className="text-white px-4 py-2 rounded-lg text-sm font-medium transition hover:opacity-90"
+            style={{ backgroundColor: '#DD6420' }}
           >
             Export CSV
           </button>
@@ -106,7 +107,7 @@ export default function AdminPage() {
         ) : (
           <div className="bg-white rounded-xl shadow overflow-hidden">
             <table className="w-full text-sm">
-              <thead className="bg-green-700 text-white">
+              <thead className="text-white" style={{ backgroundColor: '#013c28' }}>
                 <tr>
                   {['Child', 'Age', 'Grade', 'Parent', 'Phone', 'Email', 'Medical', 'Registered'].map(h => (
                     <th key={h} className="text-left px-4 py-3 font-medium">{h}</th>
