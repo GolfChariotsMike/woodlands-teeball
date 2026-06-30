@@ -8,6 +8,7 @@ export default function RegistrationForm() {
     child_name: '',
     child_age: '',
     grade: '',
+    school: '',
     parent_name: '',
     phone: '',
     email: '',
@@ -96,6 +97,19 @@ export default function RegistrationForm() {
               className="w-full rounded-lg px-4 py-2.5 focus:outline-none border-2 bg-white"
               style={{ borderColor: '#d4c4a0' }}
               placeholder="e.g. Jack Smith"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold mb-1 uppercase tracking-wide" style={{ color: '#013c28' }}>School</label>
+            <input
+              type="text"
+              name="school"
+              value={form.school}
+              onChange={handleChange}
+              className="w-full rounded-lg px-4 py-2.5 focus:outline-none border-2 bg-white"
+              style={{ borderColor: '#d4c4a0' }}
+              placeholder="e.g. Woodlands Primary School"
             />
           </div>
 

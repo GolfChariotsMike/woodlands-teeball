@@ -8,7 +8,7 @@ const supabase = createClient(
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
-  const { child_name, child_age, grade, parent_name, phone, email, medical_notes } = body
+  const { child_name, child_age, grade, school, parent_name, phone, email, medical_notes } = body
 
   if (!child_name || !parent_name || !phone) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
 
   const { error } = await supabase
     .from('woodlands_teeball_registrations')
-    .insert({ child_name, child_age, grade, parent_name, phone, email, medical_notes })
+    .insert({ child_name, child_age, grade, school, parent_name, phone, email, medical_notes })
 
   if (error) {
     console.error(error)

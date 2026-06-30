@@ -7,6 +7,7 @@ type Registration = {
   child_name: string
   child_age: string
   grade: string
+  school: string
   parent_name: string
   phone: string
   email: string
@@ -43,9 +44,9 @@ export default function AdminPage() {
   }, [unlocked])
 
   const exportCSV = () => {
-    const headers = ['Child Name', 'Age', 'Grade', 'Parent Name', 'Phone', 'Email', 'Medical Notes', 'Registered At']
+    const headers = ['Child Name', 'Age', 'Grade', 'School', 'Parent Name', 'Phone', 'Email', 'Medical Notes', 'Registered At']
     const rows = registrations.map(r => [
-      r.child_name, r.child_age, r.grade, r.parent_name, r.phone, r.email,
+      r.child_name, r.child_age, r.grade, r.school, r.parent_name, r.phone, r.email,
       r.medical_notes, new Date(r.created_at).toLocaleString('en-AU')
     ])
     const csv = [headers, ...rows].map(row => row.map(v => `"${(v || '').replace(/"/g, '""')}"`).join(',')).join('\n')
@@ -109,7 +110,7 @@ export default function AdminPage() {
             <table className="w-full text-sm">
               <thead className="text-white" style={{ backgroundColor: '#013c28' }}>
                 <tr>
-                  {['Child', 'Age', 'Grade', 'Parent', 'Phone', 'Email', 'Medical', 'Registered'].map(h => (
+                  {['Child', 'Age', 'Grade', 'School', 'Parent', 'Phone', 'Email', 'Medical', 'Registered'].map(h => (
                     <th key={h} className="text-left px-4 py-3 font-medium">{h}</th>
                   ))}
                 </tr>
@@ -120,6 +121,7 @@ export default function AdminPage() {
                     <td className="px-4 py-3 font-medium">{r.child_name}</td>
                     <td className="px-4 py-3 text-gray-600">{r.child_age || '—'}</td>
                     <td className="px-4 py-3 text-gray-600">{r.grade || '—'}</td>
+                    <td className="px-4 py-3 text-gray-600">{r.school || '—'}</td>
                     <td className="px-4 py-3">{r.parent_name}</td>
                     <td className="px-4 py-3 text-gray-600">{r.phone}</td>
                     <td className="px-4 py-3 text-gray-600">{r.email || '—'}</td>
