@@ -203,6 +203,10 @@ export default function RegistrationForm() {
 
           {error && <p className="text-red-600 text-sm">{error}</p>}
 
+          <p className="text-center text-sm font-semibold" style={{ color: '#013c28' }}>
+            ⚠️ A parent or guardian must remain on-site for the duration of each training session.
+          </p>
+
           <button
             type="submit"
             disabled={status === 'loading'}
@@ -214,10 +218,6 @@ export default function RegistrationForm() {
 
           <p className="text-center text-xs" style={{ color: '#888' }}>
             Woodlands Reserve, Teakwood Ave, Woodlands WA 6018
-          </p>
-
-          <p className="text-center text-sm font-semibold mt-2" style={{ color: '#013c28' }}>
-            ⚠️ A parent or guardian must remain on-site for the duration of each training session.
           </p>
         </form>
       </div>
