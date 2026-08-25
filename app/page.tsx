@@ -66,6 +66,12 @@ export default function RegistrationForm() {
     <main className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: '#F5ECD7' }}>
       <div className="rounded-2xl shadow-xl overflow-hidden max-w-lg w-full" style={{ backgroundColor: '#fff8ee' }}>
 
+        {/* Cancellation Notice */}
+        <div className="px-6 py-4 text-center" style={{ backgroundColor: '#7a1c1c', color: '#fff' }}>
+          <p className="font-bold text-sm uppercase tracking-wide">⚠️ Clinic Cancelled — Weather</p>
+          <p className="text-sm mt-1">Tomorrow&apos;s after school clinic at DVPS/ISWA has been cancelled due to the weather. We&apos;ll be in touch with a new date soon.</p>
+        </div>
+
         {/* Header */}
         <div className="px-8 py-7 text-white text-center" style={{ backgroundColor: '#013c28' }}>
           <Image
@@ -209,11 +215,11 @@ export default function RegistrationForm() {
 
           <button
             type="submit"
-            disabled={status === 'loading'}
+            disabled={true}
             className="w-full text-white font-bold py-3 rounded-lg transition uppercase tracking-widest hover:opacity-90 disabled:opacity-50"
             style={{ backgroundColor: '#013c28' }}
           >
-            {status === 'loading' ? 'Registering...' : 'Register Now'}
+            Registration Currently Unavailable
           </button>
 
           <p className="text-center text-xs" style={{ color: '#888' }}>
