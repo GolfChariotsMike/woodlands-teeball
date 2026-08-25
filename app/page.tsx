@@ -69,7 +69,7 @@ export default function RegistrationForm() {
         {/* Cancellation Notice */}
         <div className="px-6 py-4 text-center" style={{ backgroundColor: '#7a1c1c', color: '#fff' }}>
           <p className="font-bold text-sm uppercase tracking-wide">⚠️ Clinic Cancelled — Weather</p>
-          <p className="text-sm mt-1">Tomorrow&apos;s after school clinic at DVPS/ISWA has been cancelled due to the weather. We&apos;ll be in touch with a new date soon.</p>
+          <p className="text-sm mt-1">Tomorrow&apos;s after school clinic at DVPS/ISWA has been cancelled due to the weather.</p>
         </div>
 
         {/* Header */}
