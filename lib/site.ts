@@ -1,8 +1,10 @@
 export const EMAIL = "hello@woodlandsteeball.com.au";
 export const PRESIDENT_EMAIL = "president@woodlandsteeball.com.au";
-export const ADDRESS = "Woodlands Reserve, Teakwood Ave, Woodlands WA 6018";
+export const ADDRESS =
+  "Woodlands Reserve, Teakwood Ave, Woodlands, Perth WA 6018";
+export const ADDRESS_LINE = "Teakwood Ave, Woodlands, Perth WA 6018";
 export const MAPS_HREF =
-  "https://maps.google.com/?q=Woodlands+Reserve+Teakwood+Ave+Woodlands+WA+6018";
+  "https://maps.google.com/?q=Woodlands+Reserve+Teakwood+Ave+Woodlands+Perth+WA+6018";
 export const FACEBOOK_HREF = "https://www.facebook.com/WoodlandsTeeballClub";
 
 export const aboutLinks = [
@@ -31,14 +33,8 @@ export type Sponsor = {
   href?: string;
 };
 
+/** Home “Proudly Sponsored By” strip, minus the site-builder credit. */
 export const sponsors: Sponsor[] = [
-  {
-    name: "White Chalk Road",
-    src: "/sponsors/white-chalk-road.png",
-    width: 600,
-    height: 300,
-    href: "https://www.whitechalkroad.com.au/",
-  },
   {
     name: "Woodlands Wolves",
     src: "/sponsors/woodlands-wolves.png",
@@ -95,52 +91,64 @@ export const sponsors: Sponsor[] = [
     width: 1502,
     height: 660,
   },
-  {
-    name: "Grill'd",
-    src: "/sponsors/grilld.jpg",
-    width: 640,
-    height: 350,
-    href: "https://grilld.com.au/restaurants/western-australia/innaloo",
-  },
-  {
-    name: "Budget",
-    src: "/sponsors/budget.png",
-    width: 600,
-    height: 300,
-    href: "https://www.budget.com.au/en/home",
-  },
-  {
-    name: "Oh So Deli",
-    src: "/sponsors/oh-so-deli.png",
-    width: 225,
-    height: 225,
-    href: "https://www.instagram.com/ohsodeli/",
-  },
-  {
-    name: "Profile Orthodontics",
-    src: "/sponsors/profile-orthodontics.png",
-    width: 300,
-    height: 150,
-    href: "https://profileorthodontics.com.au/",
-  },
 ];
 
-export const namedSponsors: { name: string; href?: string }[] = [
-  { name: "AR Advisors", href: "https://www.aradvisors.com.au/" },
-  { name: "Gryphon Garage Doors", href: "https://gryphongaragedoors.com/" },
+/** Extra marks named on the register page, with logos from the scrape. */
+export const registerSponsors: Sponsor[] = [
+  {
+    name: "AR Advisors",
+    src: "/sponsors/ar-advisors.png",
+    width: 401,
+    height: 78,
+  },
+  {
+    name: "Gryphon Garage Doors",
+    src: "/sponsors/gryphon.png",
+    width: 65,
+    height: 78,
+  },
   {
     name: "Airad Consultants",
-    href: "https://www.facebook.com/Airad-Consultants-620933341329518/",
+    src: "/sponsors/airad.png",
+    width: 123,
+    height: 78,
   },
-  { name: "Fogarty Partners", href: "https://www.fogartypartners.com.au/" },
-  { name: "Davey Real Estate", href: "https://www.daveyrealestate.com.au/" },
-  { name: "Magic Travel" },
-  { name: "Gobsmacked Mouth Guards", href: "https://gobsmackedsmg.com.au/" },
+  {
+    name: "Fogarty Partners",
+    src: "/sponsors/fogarty.png",
+    width: 396,
+    height: 78,
+  },
+  {
+    name: "Davey Real Estate",
+    src: "/sponsors/davey.png",
+    width: 401,
+    height: 78,
+  },
+  {
+    name: "Magic Travel",
+    src: "/sponsors/magic-travel.png",
+    width: 100,
+    height: 78,
+  },
+  {
+    name: "Gobsmacked Mouth Guards",
+    src: "/sponsors/gobsmacked.png",
+    width: 1214,
+    height: 1051,
+  },
   {
     name: "Terry White Chemmart Doubleview",
-    href: "http://www.terrywhitechemmartdoubleview.com.au/",
+    src: "/sponsors/terry-white.png",
+    width: 210,
+    height: 78,
   },
-  { name: "Kreepy Krauly", href: "https://www.kreepykrauly.com.au/" },
+  {
+    name: "Kreepy Krauly",
+    src: "/sponsors/kreepy-krauly.png",
+    width: 271,
+    height: 78,
+  },
 ];
 
 export const gallery = [
@@ -202,34 +210,43 @@ export const committee = [
   { position: "Ordinary Member", name: "Ash Brewis" },
 ] as const;
 
+export const rulebook = {
+  title: "TBAWA Rule Book (Edition 7)",
+  href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2023/10/Rule-Book-Edition-7-1-1.pdf",
+  format: "PDF",
+} as const;
+
+export const diamondAllocation = {
+  title: "Wembley diamond allocation",
+  href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2022/06/Wembley-Diamond-Allocation.pdf",
+  format: "PDF",
+} as const;
+
 export const downloads = [
-  {
-    title: "TBAWA Rule Book (Edition 7)",
-    href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2023/10/Rule-Book-Edition-7-1-1.pdf",
-  },
   {
     title: "WTBC Managers Booklet",
     href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2023/10/WTBC-Managers-Booklet.pdf",
+    format: "PDF",
   },
   {
-    title: "Wembley Teeball Association By-Laws (March 2023)",
+    title: "Score Completion Instructions",
+    href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2022/06/Score_Book_Completion_Instructions.doc",
+    format: "DOC",
+  },
+  {
+    title: "WTBA By-Laws (March 2023)",
     href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2023/10/Wembley-Teeball-Assoc-By-Laws-March-2023.pdf",
+    format: "PDF",
   },
   {
-    title: "Wembley Handbook (October 2023)",
+    title: "Wembley Teeball Assoc Handbook (October 2023)",
     href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2023/10/Wembley-Handbook-Oct-2023.pdf",
+    format: "PDF",
   },
   {
-    title: "Woodlands Teeball Club Inc Constitution (February 2018)",
+    title: "Woodlands Tee-Ball Club Constitution (February 2018)",
     href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2024/09/Woodlands-Teeball-Club-Inc-Constitution-February-2018.pdf",
-  },
-  {
-    title: "Scorecard and incident report",
-    href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2022/07/ScoreCard-Incident-Report-1.pdf",
-  },
-  {
-    title: "Wembley diamond allocation",
-    href: "https://www.woodlandsteeball.com.au/wp-content/uploads/2022/06/Wembley-Diamond-Allocation.pdf",
+    format: "PDF",
   },
 ] as const;
 

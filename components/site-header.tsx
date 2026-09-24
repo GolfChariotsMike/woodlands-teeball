@@ -63,13 +63,6 @@ function MenuLinks({ onNavigate }: { onNavigate?: () => void }) {
           ))}
         </ul>
       </div>
-      <Link
-        href="/register"
-        onClick={onNavigate}
-        className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-club"
-      >
-        Register
-      </Link>
       <div>
         <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-clay">
           Information
@@ -162,7 +155,6 @@ export function SiteHeader() {
               </ul>
             </div>
           </div>
-          <DesktopLink href="/register">Register</DesktopLink>
           <div className="group relative">
             <DesktopLink href="/information">
               <span className={infoActive ? "text-clay" : undefined}>

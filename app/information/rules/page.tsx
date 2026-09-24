@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Article, PageCta } from "@/components/article";
 import { SiteFrame } from "@/components/site-frame";
-import { downloads } from "@/lib/site";
+import { rulebook } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Rules",
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function RulesPage() {
-  const rulebook = downloads[0];
   return (
     <SiteFrame>
       <Article

@@ -5,10 +5,11 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import styles from "./scroll.module.css";
 
-const LOGO = "/brand/mark.png";
+const LOGO = "/brand/L.png";
 const FILM = "/scroll/scene.mp4";
 const POSTER = "/scroll/poster.png";
 const EMAIL = "hello@woodlandsteeball.com.au";
+const ADDRESS_LINE = "Teakwood Ave, Woodlands, Perth WA 6018";
 
 /** Scroll progress at which the film is holding its last frame. */
 const VIDEO_END = 0.7;
@@ -85,7 +86,7 @@ function Story() {
           <p className={styles.staticKicker}>Woodlands Reserve</p>
           <h2 className={styles.staticHeading}>Come and play.</h2>
           <p className={styles.staticCopy}>
-            Teakwood Ave, Woodlands WA 6018
+            {ADDRESS_LINE}
           </p>
           <div className={styles.staticActions}>
             <Link href="/register" className={styles.staticPrimary}>
@@ -273,8 +274,8 @@ export function ScrollFilm({ embedded = false }: { embedded?: boolean }) {
 
           <p className={styles.srOnly}>
             Woodlands Teeball Club. From the tee, through the swing. Ages 5 to
-            10, teams U7, U9 and U11. Woodlands Reserve, Teakwood Ave, Woodlands
-            WA 6018. Email {EMAIL}.
+            10, teams U7, U9 and U11. Woodlands Reserve, {ADDRESS_LINE}. Email{" "}
+            {EMAIL}.
           </p>
 
           <div
@@ -342,7 +343,7 @@ export function ScrollFilm({ embedded = false }: { embedded?: boolean }) {
           >
             <p className={styles.kicker}>Woodlands Reserve</p>
             <h2 className={styles.title}>Come and play.</h2>
-            <p className={styles.copy}>Teakwood Ave, Woodlands WA 6018</p>
+            <p className={styles.copy}>{ADDRESS_LINE}</p>
             <div className={styles.actions}>
               <Link href="/register" className={`${styles.button} ${styles.primary}`}>
                 Register

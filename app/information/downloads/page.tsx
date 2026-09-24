@@ -6,7 +6,7 @@ import { downloads } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Downloads",
   description:
-    "Woodlands Teeball Club documents: rule book, managers booklet, by-laws, handbook, constitution and scorecard.",
+    "Woodlands Teeball Club documents: managers booklet, score instructions, by-laws, handbook and constitution.",
 };
 
 export default function DownloadsPage() {
@@ -28,7 +28,7 @@ export default function DownloadsPage() {
               >
                 <span>{item.title}</span>
                 <span className="font-display text-[0.68rem] uppercase tracking-[0.16em] text-clay">
-                  PDF
+                  {item.format}
                 </span>
               </a>
             </li>

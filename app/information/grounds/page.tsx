@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Article, PageCta } from "@/components/article";
 import { SiteFrame } from "@/components/site-frame";
-import { ADDRESS, downloads, grounds } from "@/lib/site";
+import { ADDRESS, diamondAllocation, grounds } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Grounds",
@@ -10,9 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function GroundsPage() {
-  const allocation = downloads.find((item) =>
-    item.title.toLowerCase().includes("diamond"),
-  );
   return (
     <SiteFrame>
       <Article
@@ -35,18 +32,16 @@ export default function GroundsPage() {
           Under 7 and Under 9 teams play at 8:30am. Under 11 teams play at
           10:15am.
         </p>
-        {allocation ? (
-          <p>
-            <a
-              href={allocation.href}
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold text-club underline decoration-clay decoration-2 underline-offset-4"
-            >
-              {allocation.title} (PDF)
-            </a>
-          </p>
-        ) : null}
+        <p>
+          <a
+            href={diamondAllocation.href}
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-club underline decoration-clay decoration-2 underline-offset-4"
+          >
+            {diamondAllocation.title} (PDF)
+          </a>
+        </p>
         <PageCta />
       </Article>
     </SiteFrame>
