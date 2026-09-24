@@ -7,7 +7,7 @@
 
 :global(body:has(.scroll-page)) {
   display: block;
-  background: #04140e;
+  background: #f5ecd7;
 }
 
 .srOnly {
@@ -157,7 +157,7 @@
   content: "";
   width: 2.1rem;
   height: 3px;
-  background: #015036;
+  background: #013c28;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
 }
 
@@ -193,7 +193,7 @@
 }
 
 .pills li {
-  background: #015036;
+  background: #013c28;
   color: #fff;
   border-radius: 999px;
   padding: 0.45rem 0.85rem;
@@ -227,7 +227,7 @@
 }
 
 .primary {
-  background: #015036;
+  background: #dd6420;
   color: #fff;
 }
 
@@ -285,7 +285,7 @@
   display: block;
   height: 100%;
   width: 100%;
-  background: #015036;
+  background: #013c28;
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -302,7 +302,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: #015036;
+  background: #013c28;
 }
 
 .staticLogo {
@@ -341,7 +341,7 @@
 
 .staticKicker {
   margin: 0 0 0.6rem;
-  color: #015036;
+  color: #013c28;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
@@ -351,7 +351,7 @@
 
 .staticTitle {
   margin: 0;
-  color: #015036;
+  color: #013c28;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: clamp(2.6rem, 8vw, 4.6rem);
   font-weight: 700;
@@ -374,7 +374,7 @@
 
 .staticHeading {
   margin: 0;
-  color: #015036;
+  color: #013c28;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
@@ -391,7 +391,7 @@
 }
 
 .staticPills li {
-  background: #015036;
+  background: #013c28;
   color: #fff;
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
@@ -424,20 +424,20 @@
 }
 
 .staticPrimary {
-  background: #015036;
+  background: #dd6420;
   color: #fff;
   text-transform: uppercase;
 }
 
 .staticSecondary {
-  color: #015036;
-  border: 1px solid #015036;
+  color: #013c28;
+  border: 1px solid #013c28;
 }
 
 .staticPrimary:focus-visible,
 .staticSecondary:focus-visible,
 .staticCta:focus-visible {
-  outline: 2px solid #015036;
+  outline: 2px solid #013c28;
   outline-offset: 3px;
 }
 
@@ -447,6 +447,15 @@
     flex-direction: column;
     align-items: stretch;
   }
+}
+
+.embedded .top,
+.embedded .staticHeader {
+  display: none;
+}
+
+.embedded .static {
+  padding-top: var(--site-header);
 }
 
 @media (prefers-reduced-motion: reduce) {

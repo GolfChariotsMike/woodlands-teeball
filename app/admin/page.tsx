@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 type Registration = {
   id: string
@@ -26,6 +27,7 @@ export default function AdminPage() {
     e.preventDefault()
     if (pin === '1974') {
       setUnlocked(true)
+      setLoading(true)
       setWrongPin(false)
     } else {
       setWrongPin(true)
@@ -34,12 +36,21 @@ export default function AdminPage() {
   }
 
   useEffect(() => {
-    if (unlocked) {
-      setLoading(true)
-      fetch('/api/admin/registrations')
-        .then(r => r.json())
-        .then(data => { setRegistrations(data); setLoading(false) })
-        .catch(() => setLoading(false))
+    if (!unlocked) return
+    let cancelled = false
+    fetch('/api/admin/registrations')
+      .then(r => r.json())
+      .then(data => {
+        if (!cancelled) {
+          setRegistrations(data)
+          setLoading(false)
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setLoading(false)
+      })
+    return () => {
+      cancelled = true
     }
   }, [unlocked])
 
@@ -79,6 +90,9 @@ export default function AdminPage() {
               Unlock
             </button>
           </form>
+          <p className="mt-6 text-sm">
+            <Link href="/" className="text-green-800 underline">Club site</Link>
+          </p>
         </div>
       </main>
     )
@@ -92,13 +106,16 @@ export default function AdminPage() {
             <h1 className="text-2xl font-bold" style={{ color: '#013c28' }}>⚾ Woodlands Teeball — Registrations</h1>
             <p className="text-gray-500 text-sm mt-1">{registrations.length} registered</p>
           </div>
-          <button
-            onClick={exportCSV}
-            className="text-white px-4 py-2 rounded-lg text-sm font-medium transition hover:opacity-90"
-            style={{ backgroundColor: '#DD6420' }}
-          >
-            Export CSV
-          </button>
+          <div className="flex items-center gap-3">
+            <Link href="/" className="text-sm underline" style={{ color: '#013c28' }}>Club site</Link>
+            <button
+              onClick={exportCSV}
+              className="text-white px-4 py-2 rounded-lg text-sm font-medium transition hover:opacity-90"
+              style={{ backgroundColor: '#DD6420' }}
+            >
+              Export CSV
+            </button>
+          </div>
         </div>
 
         {loading ? (

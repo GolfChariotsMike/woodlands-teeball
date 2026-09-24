@@ -5,8 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import styles from "./scroll.module.css";
 
-const LOGO =
-  "https://www.woodlandsteeball.com.au/wp-content/uploads/2018/06/L.png";
+const LOGO = "/brand/mark.png";
 const FILM = "/scroll/scene.mp4";
 const POSTER = "/scroll/poster.png";
 const EMAIL = "hello@woodlandsteeball.com.au";
@@ -41,7 +40,7 @@ function Story() {
           height={300}
           className={styles.staticLogo}
         />
-        <Link href="/" className={styles.staticCta}>
+        <Link href="/register" className={styles.staticCta}>
           Register
         </Link>
       </header>
@@ -89,7 +88,7 @@ function Story() {
             Teakwood Ave, Woodlands WA 6018
           </p>
           <div className={styles.staticActions}>
-            <Link href="/" className={styles.staticPrimary}>
+            <Link href="/register" className={styles.staticPrimary}>
               Register
             </Link>
             <a className={styles.staticSecondary} href={`mailto:${EMAIL}`}>
@@ -102,7 +101,7 @@ function Story() {
   );
 }
 
-export function ScrollFilm() {
+export function ScrollFilm({ embedded = false }: { embedded?: boolean }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const barRef = useRef<HTMLSpanElement>(null);
@@ -223,8 +222,10 @@ export function ScrollFilm() {
     };
   }, []);
 
+    const Root = embedded ? "div" : "main";
+
     return (
-    <main className={`scroll-page ${styles.page}`}>
+    <Root className={`scroll-page ${styles.page} ${embedded ? styles.embedded : ""}`}>
       <noscript>
         <style>{`.scroll-track{display:none !important}.static-story{display:block !important}`}</style>
       </noscript>
@@ -255,10 +256,7 @@ export function ScrollFilm() {
           </div>
 
           <header className={styles.top}>
-            <a
-              className={styles.logoLink}
-              href="https://www.woodlandsteeball.com.au/"
-            >
+            <Link className={styles.logoLink} href="/">
               <Image
                 src={LOGO}
                 alt="Woodlands Teeball Club"
@@ -267,8 +265,8 @@ export function ScrollFilm() {
                 priority
                 className={styles.logo}
               />
-            </a>
-            <Link href="/" className={styles.headerCta}>
+            </Link>
+            <Link href="/register" className={styles.headerCta}>
               Register
             </Link>
           </header>
@@ -346,7 +344,7 @@ export function ScrollFilm() {
             <h2 className={styles.title}>Come and play.</h2>
             <p className={styles.copy}>Teakwood Ave, Woodlands WA 6018</p>
             <div className={styles.actions}>
-              <Link href="/" className={`${styles.button} ${styles.primary}`}>
+              <Link href="/register" className={`${styles.button} ${styles.primary}`}>
                 Register
               </Link>
               <a
@@ -363,6 +361,6 @@ export function ScrollFilm() {
           </div>
         </div>
       </div>
-    </main>
+    </Root>
   );
 }

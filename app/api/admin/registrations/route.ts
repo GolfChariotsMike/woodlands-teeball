@@ -1,12 +1,17 @@
 import { createClient } from '@supabase/supabase-js'
 import { NextResponse } from 'next/server'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+function getSupabase() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!url || !key) {
+    throw new Error('Supabase environment variables are not set')
+  }
+  return createClient(url, key)
+}
 
 export async function GET() {
+  const supabase = getSupabase()
   const { data, error } = await supabase
     .from('woodlands_teeball_registrations')
     .select('*')
