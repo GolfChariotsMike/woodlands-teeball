@@ -63,13 +63,6 @@ function MenuLinks({ onNavigate }: { onNavigate?: () => void }) {
           ))}
         </ul>
       </div>
-      <Link
-        href="/register"
-        onClick={onNavigate}
-        className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-club"
-      >
-        Register
-      </Link>
       <div>
         <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-clay">
           Information
@@ -95,13 +88,6 @@ function MenuLinks({ onNavigate }: { onNavigate?: () => void }) {
         className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-club"
       >
         Contact
-      </Link>
-      <Link
-        href="/clinic"
-        onClick={onNavigate}
-        className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-club"
-      >
-        Clinic
       </Link>
     </div>
   );
@@ -169,7 +155,6 @@ export function SiteHeader() {
               </ul>
             </div>
           </div>
-          <DesktopLink href="/register">Register</DesktopLink>
           <div className="group relative">
             <DesktopLink href="/information">
               <span className={infoActive ? "text-clay" : undefined}>
@@ -192,7 +177,6 @@ export function SiteHeader() {
             </div>
           </div>
           <DesktopLink href="/contact">Contact</DesktopLink>
-          <DesktopLink href="/clinic">Clinic</DesktopLink>
         </nav>
 
         <div className="flex items-center gap-2">

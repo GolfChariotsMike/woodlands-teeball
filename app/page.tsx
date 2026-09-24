@@ -6,7 +6,7 @@ import { ScrollFilm } from "@/components/scroll-film/scroll-film";
 
 export const metadata: Metadata = {
   description:
-    "Woodlands Teeball Club for boys and girls aged 5–10. Under 7s, Under 9s and Under 11s at Woodlands Reserve, Teakwood Ave, Woodlands WA 6018.",
+    "Woodlands Teeball Club for boys and girls aged 5–10. Under 7, Under 9 and Under 11 at Woodlands Reserve, Teakwood Ave, Woodlands, Perth WA 6018.",
 };
 
 export default function HomePage() {

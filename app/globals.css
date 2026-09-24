@@ -3,7 +3,7 @@
 :root {
   --site-header: 4.5rem;
   --background: #f5ecd7;
-  --foreground: #333;
+  --foreground: #444;
 }
 
 @theme inline {
@@ -11,12 +11,12 @@
   --color-clay: #dd6420;
   --color-cream: #f5ecd7;
   --color-paper: #fff8ee;
-  --color-ink: #333;
+  --color-ink: #444;
   --font-sans: var(--font-body), "Open Sans", sans-serif;
 }
 
 .font-display {
-  font-family: var(--font-display), Montserrat, sans-serif;
+  font-family: var(--font-heading), "Roboto Condensed", sans-serif;
 }
 
 body {

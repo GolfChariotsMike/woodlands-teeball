@@ -6,7 +6,7 @@ import { ADDRESS, committee, EMAIL, MAPS_HREF } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Woodlands Teeball Club at hello@woodlandsteeball.com.au. Woodlands Reserve, Teakwood Ave, Woodlands WA 6018.",
+    "Contact Woodlands Teeball Club at hello@woodlandsteeball.com.au. Woodlands Reserve, Teakwood Ave, Woodlands, Perth WA 6018.",
 };
 
 export default function ContactPage() {

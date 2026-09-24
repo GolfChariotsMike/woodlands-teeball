@@ -261,7 +261,7 @@ export function ClinicForm() {
         </button>
 
         <p className="text-center text-xs text-[#888]">
-          Woodlands Reserve, Teakwood Ave, Woodlands WA 6018
+          Woodlands Reserve, Teakwood Ave, Woodlands, Perth WA 6018
         </p>
         <p className="text-center text-xs">
           <Link href="/" className="text-club underline underline-offset-2">
