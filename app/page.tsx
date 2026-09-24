@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function RegistrationForm() {
   const [form, setForm] = useState({
@@ -224,6 +225,11 @@ export default function RegistrationForm() {
 
           <p className="text-center text-xs" style={{ color: '#888' }}>
             Woodlands Reserve, Teakwood Ave, Woodlands WA 6018
+          </p>
+          <p className="text-center text-xs">
+            <Link href="/scroll" className="underline underline-offset-2" style={{ color: '#013c28' }}>
+              Watch the film
+            </Link>
           </p>
         </form>
       </div>

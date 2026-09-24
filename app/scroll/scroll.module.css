@@ -1,0 +1,464 @@
+.page {
+  width: 100%;
+  background: #04140e;
+  color: #fff;
+  font-family: var(--font-body), "Open Sans", sans-serif;
+}
+
+:global(body:has(.scroll-page)) {
+  display: block;
+  background: #04140e;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.track {
+  height: 520vh;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #04140e;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+}
+
+.poster,
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.video {
+  opacity: 0;
+}
+
+.videoReady {
+  opacity: 1;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 20, 14, 0.62) 0%,
+      rgba(4, 20, 14, 0.12) 24%,
+      rgba(4, 20, 14, 0.02) 46%,
+      rgba(4, 20, 14, 0.45) 70%,
+      rgba(4, 20, 14, 0.9) 100%
+    );
+  pointer-events: none;
+}
+
+.top {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: max(0.85rem, env(safe-area-inset-top))
+    max(1.1rem, env(safe-area-inset-right)) 0
+    max(1.1rem, env(safe-area-inset-left));
+  pointer-events: none;
+}
+
+.top a {
+  pointer-events: auto;
+}
+
+.logoLink {
+  display: block;
+  line-height: 0;
+}
+
+.logo {
+  width: clamp(68px, 12vw, 96px);
+  height: auto;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+}
+
+.headerCta {
+  margin-top: 0.35rem;
+  color: #fff;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  padding-bottom: 0.15rem;
+}
+
+.headerCta:focus-visible,
+.button:focus-visible,
+.logoLink:focus-visible,
+.textLink:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.beat {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 max(1.25rem, env(safe-area-inset-right))
+    max(4.75rem, calc(env(safe-area-inset-bottom) + 3.4rem))
+    max(1.25rem, env(safe-area-inset-left));
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.85rem;
+  color: #e7f6ee;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.kicker::before {
+  content: "";
+  width: 2.1rem;
+  height: 3px;
+  background: #015036;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.title {
+  margin: 0;
+  max-width: 11ch;
+  color: #fff;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: clamp(3.1rem, 9vw, 7.4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.copy {
+  max-width: 36rem;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.45;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pills li {
+  background: #015036;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.35rem;
+  pointer-events: auto;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.primary {
+  background: #015036;
+  color: #fff;
+}
+
+.secondary {
+  background: rgba(4, 20, 14, 0.35);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+}
+
+.hint {
+  margin: 1.25rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.hint::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 2.4rem;
+  margin-top: 0.55rem;
+  background: linear-gradient(#fff, transparent);
+  animation: nudge 1.7s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: scaleY(0.65);
+    opacity: 0.45;
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+    transform-origin: top;
+  }
+}
+
+.progress {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #015036;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.static {
+  display: none;
+  background: #f7f4ef;
+  color: #333;
+}
+
+.staticHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #015036;
+}
+
+.staticLogo {
+  width: 84px;
+  height: auto;
+}
+
+.staticCta {
+  color: #fff;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.staticMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1280 / 716;
+  background: #04140e;
+}
+
+.staticMedia img {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.staticBody {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.staticKicker {
+  margin: 0 0 0.6rem;
+  color: #015036;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.staticTitle {
+  margin: 0;
+  color: #015036;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.staticCopy {
+  margin: 1rem 0 0;
+  color: #444;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.staticSection {
+  margin-top: 2.25rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(1, 80, 54, 0.18);
+}
+
+.staticHeading {
+  margin: 0;
+  color: #015036;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.staticPills {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.staticPills li {
+  background: #015036;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.staticActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.staticPrimary,
+.staticSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.15rem;
+  border-radius: 999px;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.staticPrimary {
+  background: #015036;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.staticSecondary {
+  color: #015036;
+  border: 1px solid #015036;
+}
+
+.staticPrimary:focus-visible,
+.staticSecondary:focus-visible,
+.staticCta:focus-visible {
+  outline: 2px solid #015036;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .actions,
+  .staticActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    display: none;
+  }
+
+  .static {
+    display: block;
+  }
+
+  .hint::after {
+    animation: none;
+  }
+}
