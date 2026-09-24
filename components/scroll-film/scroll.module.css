@@ -157,7 +157,7 @@
   content: "";
   width: 2.1rem;
   height: 3px;
-  background: #013c28;
+  background: #015036;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
 }
 
@@ -193,7 +193,7 @@
 }
 
 .pills li {
-  background: #013c28;
+  background: #015036;
   color: #fff;
   border-radius: 999px;
   padding: 0.45rem 0.85rem;
@@ -285,7 +285,7 @@
   display: block;
   height: 100%;
   width: 100%;
-  background: #013c28;
+  background: #015036;
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -302,7 +302,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: #013c28;
+  background: #015036;
 }
 
 .staticLogo {
@@ -341,7 +341,7 @@
 
 .staticKicker {
   margin: 0 0 0.6rem;
-  color: #013c28;
+  color: #015036;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
@@ -351,7 +351,7 @@
 
 .staticTitle {
   margin: 0;
-  color: #013c28;
+  color: #015036;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: clamp(2.6rem, 8vw, 4.6rem);
   font-weight: 700;
@@ -374,7 +374,7 @@
 
 .staticHeading {
   margin: 0;
-  color: #013c28;
+  color: #015036;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
@@ -391,7 +391,7 @@
 }
 
 .staticPills li {
-  background: #013c28;
+  background: #015036;
   color: #fff;
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
@@ -430,14 +430,14 @@
 }
 
 .staticSecondary {
-  color: #013c28;
-  border: 1px solid #013c28;
+  color: #015036;
+  border: 1px solid #015036;
 }
 
 .staticPrimary:focus-visible,
 .staticSecondary:focus-visible,
 .staticCta:focus-visible {
-  outline: 2px solid #013c28;
+  outline: 2px solid #015036;
   outline-offset: 3px;
 }
 
