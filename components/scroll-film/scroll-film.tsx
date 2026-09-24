@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import styles from "./scroll.module.css";
 
-const LOGO = "/brand/mark.png";
+const LOGO = "/brand/L.png";
 const FILM = "/scroll/scene.mp4";
 const POSTER = "/scroll/poster.png";
 const EMAIL = "hello@woodlandsteeball.com.au";

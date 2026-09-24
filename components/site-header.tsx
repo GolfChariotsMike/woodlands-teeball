@@ -96,6 +96,13 @@ function MenuLinks({ onNavigate }: { onNavigate?: () => void }) {
       >
         Contact
       </Link>
+      <Link
+        href="/clinic"
+        onClick={onNavigate}
+        className="font-display text-sm font-semibold uppercase tracking-[0.16em] text-club"
+      >
+        Clinic
+      </Link>
     </div>
   );
 }
@@ -185,6 +192,7 @@ export function SiteHeader() {
             </div>
           </div>
           <DesktopLink href="/contact">Contact</DesktopLink>
+          <DesktopLink href="/clinic">Clinic</DesktopLink>
         </nav>
 
         <div className="flex items-center gap-2">
